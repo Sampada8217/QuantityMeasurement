@@ -30,7 +30,12 @@ public class QuantityMeasurementTest {
         }
     }
 
-
+    @Test
+    public void givenValueCheckForFeet_whenReferenceEquals_shouldReturnResult()  {
+        Length feet1=new Length(Length.Unit.FEET,10.0);
+        Length feet2=new Length(Length.Unit.FEET,10.0);
+        Assert.assertEquals(feet1,feet2);
+    }
 
 
     @Test
@@ -48,6 +53,7 @@ public class QuantityMeasurementTest {
         Assert.assertNotEquals(inch1, inch2);
 
     }
+
     @Test
     public void givenNullInchAndNullInch_shouldThrowException() {
         try {
@@ -58,6 +64,15 @@ public class QuantityMeasurementTest {
             Assert.assertEquals(QuantityException.ExceptionType.NULL_VALUE_EXCEPTION, e.type);
         }
     }
+
+    @Test
+    public void givenValueCheckForInch_whenReferenceEquals_shouldReturnResult()  {
+        Length inch1=new Length(Length.Unit.INCH,10.0);
+        Length inch2=new Length(Length.Unit.INCH,10.0);
+        Assert.assertEquals(inch1,inch2);
+    }
+
+
 
     @Test
     public void given1FeetAnd1Inch_shouldReturnNotEquals() {
