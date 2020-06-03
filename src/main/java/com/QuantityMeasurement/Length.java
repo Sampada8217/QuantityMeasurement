@@ -1,7 +1,5 @@
 package com.QuantityMeasurement;
 
-import java.util.Objects;
-
 public class Length {
 
 
@@ -12,9 +10,15 @@ public class Length {
     private final Unit unit;
     private final double value;
 
-    public Length(Unit unit,double value) {
-        this.unit=unit;
-        this.value=value;
+    public Length(Unit unit, Double value) {
+        try {
+
+            this.unit = unit;
+            this.value = value;
+        } catch (NullPointerException e) {
+
+            throw new QuantityException(QuantityException.ExceptionType.NULL_VALUE_EXCEPTION,"NULL");
+        }
     }
     public boolean compare(Length thatLength){
       if(this.unit.equals(Unit.FEET) && thatLength.unit.equals(Unit.FEET))

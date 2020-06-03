@@ -20,6 +20,20 @@ public class QuantityMeasurementTest {
     }
 
     @Test
+    public void givenNullFeetAndNullFeet_shouldThrowException() {
+        try {
+
+            Length feet1 = new Length(Length.Unit.FEET,null);
+            Length feet2 = new Length(Length.Unit.FEET,null);
+        } catch (QuantityException e) {
+            Assert.assertEquals(QuantityException.ExceptionType.NULL_VALUE_EXCEPTION, e.type);
+        }
+    }
+
+
+
+
+    @Test
     public void given0InchAnd0Inch_shouldReturnEqual() {
         Length inch1 = new Length(Length.Unit.INCH, 0.0);
         Length inch2 = new Length(Length.Unit.INCH, 0.0);
@@ -33,6 +47,16 @@ public class QuantityMeasurementTest {
         Length inch2 = new Length(Length.Unit.INCH, 1.0);
         Assert.assertNotEquals(inch1, inch2);
 
+    }
+    @Test
+    public void givenNullInchAndNullInch_shouldThrowException() {
+        try {
+
+            Length inch1 = new Length(Length.Unit.INCH,null);
+            Length inch2 = new Length(Length.Unit.INCH,null);
+        } catch (QuantityException e) {
+            Assert.assertEquals(QuantityException.ExceptionType.NULL_VALUE_EXCEPTION, e.type);
+        }
     }
 
     @Test
