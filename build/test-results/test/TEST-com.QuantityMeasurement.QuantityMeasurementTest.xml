@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.QuantityMeasurement.QuantityMeasurementTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-06-03T20:30:21" hostname="DESKTOP-V36FRB4" time="0.003">
+<testsuite name="com.QuantityMeasurement.QuantityMeasurementTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-06-03T20:37:20" hostname="DESKTOP-V36FRB4" time="0.003">
   <properties/>
   <testcase name="given1YardAnd36Inch_shouldReturnEqualLength" classname="com.QuantityMeasurement.QuantityMeasurementTest" time="0.003"/>
   <system-out><![CDATA[]]></system-out>
