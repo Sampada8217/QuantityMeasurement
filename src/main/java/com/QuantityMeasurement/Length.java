@@ -23,6 +23,8 @@ public class Length {
     public boolean compare(Length thatLength){
       if(this.unit.equals(Unit.FEET) && thatLength.unit.equals(Unit.FEET))
           return Double.compare(this.value,thatLength.value)==0;
+        if(this.unit.equals(Unit.INCH) && thatLength.unit.equals(Unit.INCH))
+            return Double.compare(this.value,thatLength.value)==0;
       if(this.unit.equals(Unit.FEET) && thatLength.unit.equals(Unit.INCH))
             return Double.compare(this.value*FEET_TO_INCH,thatLength.value)==0;
 
