@@ -36,6 +36,12 @@ public class QuantityMeasurementTest {
         Length feet2=new Length(Length.Unit.FEET,10.0);
         Assert.assertEquals(feet1,feet2);
     }
+    @Test
+    public void givenValueCheckForFeet_whenTypeEquals_shouldReturnResult()  {
+        Length feet1=new Length(Length.Unit.FEET,5.0);
+        Length feet2=new Length(Length.Unit.FEET,5.0);
+        Assert.assertEquals(feet1,feet2);
+    }
 
 
     @Test
@@ -72,6 +78,12 @@ public class QuantityMeasurementTest {
         Assert.assertEquals(inch1,inch2);
     }
 
+    @Test
+    public void givenValueCheckForInch_whenTypeEquals_shouldReturnResult()  {
+        Length inch1=new Length(Length.Unit.INCH,5.0);
+        Length inch2=new Length(Length.Unit.INCH,5.0);
+        Assert.assertEquals(inch1,inch2);
+    }
 
 
     @Test
