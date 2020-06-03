@@ -171,6 +171,36 @@ public class QuantityMeasurementTest {
 
     }
 
+    @Test
+    public void given1FeetAnd1Yard_shouldReturnNotEqualLength() {
+        Length feet1 = new Length(Length.Unit.FEET, 1.0);
+        Length yard1 = new Length(Length.Unit.YARD, 1.0);
+        boolean compareCheck = feet1.compare(yard1);
+        Assert.assertNotEquals(true, compareCheck);
+
+    }
+
+
+    @Test
+    public void given1InchAnd1Yard_shouldReturnNotEqualLength() {
+        Length inch1 = new Length(Length.Unit.INCH, 1.0);
+        Length yard1 = new Length(Length.Unit.YARD, 1.0);
+        boolean compareCheck = inch1.compare(yard1);
+        Assert.assertNotEquals(true, compareCheck);
+
+    }
+
+    @Test
+    public void given1YardAnd36Inch_shouldReturnEqualLength() {
+        Length yard1 = new Length(Length.Unit.YARD, 1.0);
+        Length inch1 = new Length(Length.Unit.INCH, 36.0);
+        boolean compareCheck = yard1.compare(inch1);
+        Assert.assertEquals(true, compareCheck);
+
+    }
+
+
+
 
 
 }
