@@ -1,31 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.QuantityMeasurement.QuantityMeasurementTest" tests="25" skipped="0" failures="0" errors="0" timestamp="2020-06-04T06:59:48" hostname="DESKTOP-V36FRB4" time="0.095">
+<testsuite name="com.QuantityMeasurement.QuantityMeasurementTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-06-04T07:18:12" hostname="DESKTOP-V36FRB4" time="0.004">
   <properties/>
-  <testcase name="givenValueCheckForFeet_whenReferenceEquals_shouldReturnResult" classname="com.QuantityMeasurement.QuantityMeasurementTest" time="0.005"/>
-  <testcase name="given3FeetAnd1Yard_shouldReturnEqualLength" classname="com.QuantityMeasurement.QuantityMeasurementTest" time="0.002"/>
-  <testcase name="givenValueCheckForFeet_whenTypeEquals_shouldReturnResult" classname="com.QuantityMeasurement.QuantityMeasurementTest" time="0.001"/>
-  <testcase name="given0FeetAnd1Inch_shouldReturnNotEqualLength" classname="com.QuantityMeasurement.QuantityMeasurementTest" time="0.001"/>
-  <testcase name="given1FeetAnd1Feet_shouldReturnEqualLength" classname="com.QuantityMeasurement.QuantityMeasurementTest" time="0.002"/>
-  <testcase name="givenNullFeetAndNullFeet_shouldThrowException" classname="com.QuantityMeasurement.QuantityMeasurementTest" time="0.003"/>
-  <testcase name="givenValueCheckForInch_whenTypeEquals_shouldReturnResult" classname="com.QuantityMeasurement.QuantityMeasurementTest" time="0.001"/>
-  <testcase name="given36InchAnd1Yard_shouldReturnEqualLength" classname="com.QuantityMeasurement.QuantityMeasurementTest" time="0.0"/>
-  <testcase name="given0InchAnd0Inch_shouldReturnEqual" classname="com.QuantityMeasurement.QuantityMeasurementTest" time="0.0"/>
-  <testcase name="givenNullInchAndNullInch_shouldThrowException" classname="com.QuantityMeasurement.QuantityMeasurementTest" time="0.002"/>
-  <testcase name="given1YardAnd36Inch_shouldReturnEqualLength" classname="com.QuantityMeasurement.QuantityMeasurementTest" time="0.002"/>
-  <testcase name="given12InchAnd1Feet_shouldReturnEqualLength" classname="com.QuantityMeasurement.QuantityMeasurementTest" time="0.001"/>
-  <testcase name="given0FeetAnd1Feet_shouldReturnNotEquals" classname="com.QuantityMeasurement.QuantityMeasurementTest" time="0.001"/>
-  <testcase name="given1InchAnd1Inch_shouldReturnEqualLength" classname="com.QuantityMeasurement.QuantityMeasurementTest" time="0.0"/>
-  <testcase name="given1FeetAnd1Yard_shouldReturnNotEqualLength" classname="com.QuantityMeasurement.QuantityMeasurementTest" time="0.0"/>
-  <testcase name="given1FeetAnd1Inch_shouldReturnNotEqualLength" classname="com.QuantityMeasurement.QuantityMeasurementTest" time="0.001"/>
-  <testcase name="given0FeetAnd0Inch_shouldReturnEqualLength" classname="com.QuantityMeasurement.QuantityMeasurementTest" time="0.001"/>
-  <testcase name="given1InchAnd1Yard_shouldReturnNotEqualLength" classname="com.QuantityMeasurement.QuantityMeasurementTest" time="0.003"/>
-  <testcase name="given0InchAnd1Inch_shouldReturnEqual" classname="com.QuantityMeasurement.QuantityMeasurementTest" time="0.002"/>
-  <testcase name="given1FeetAnd12Inch_shouldReturnEqualLength" classname="com.QuantityMeasurement.QuantityMeasurementTest" time="0.001"/>
-  <testcase name="given1YardAnd3Feet_shouldReturnEqualLength" classname="com.QuantityMeasurement.QuantityMeasurementTest" time="0.0"/>
-  <testcase name="givenValueCheckForInch_whenReferenceEquals_shouldReturnResult" classname="com.QuantityMeasurement.QuantityMeasurementTest" time="0.001"/>
-  <testcase name="given0FeetAnd0Feet_shouldReturnEqual" classname="com.QuantityMeasurement.QuantityMeasurementTest" time="0.0"/>
-  <testcase name="given1InchAnd1Feet_shouldReturnNotEqualLength" classname="com.QuantityMeasurement.QuantityMeasurementTest" time="0.0"/>
-  <testcase name="given1FeetAnd1Inch_shouldReturnNotEquals" classname="com.QuantityMeasurement.QuantityMeasurementTest" time="0.001"/>
+  <testcase name="given1FeetAnd12Inch_shouldReturnEqualLength" classname="com.QuantityMeasurement.QuantityMeasurementTest" time="0.004"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
