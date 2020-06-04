@@ -10,6 +10,7 @@ public class QuantityMeasurementTest {
         Length feet1 = new Length(Length.Unit.FEET, 0.0);
         Length feet2 = new Length(Length.Unit.FEET, 0.0);
         Assert.assertEquals(feet1, feet2);
+
     }
 
     @Test
@@ -25,6 +26,7 @@ public class QuantityMeasurementTest {
 
             Length feet1 = new Length(Length.Unit.FEET, null);
             Length feet2 = new Length(Length.Unit.FEET, null);
+            Assert.assertEquals(feet1,feet2);
         } catch (QuantityException e) {
             Assert.assertEquals(QuantityException.ExceptionType.NULL_VALUE_EXCEPTION, e.type);
         }
@@ -67,6 +69,7 @@ public class QuantityMeasurementTest {
 
             Length inch1 = new Length(Length.Unit.INCH, null);
             Length inch2 = new Length(Length.Unit.INCH, null);
+            Assert.assertEquals(inch1,inch2);
         } catch (QuantityException e) {
             Assert.assertEquals(QuantityException.ExceptionType.NULL_VALUE_EXCEPTION, e.type);
         }
@@ -149,7 +152,7 @@ public class QuantityMeasurementTest {
         Length feet1 = new Length(Length.Unit.FEET, 1.0);
         Length inch1 = new Length(Length.Unit.INCH, 12.0);
         boolean compareCheck = inch1.compare(feet1);
-        Assert.assertNotEquals(true, compareCheck);
+        Assert.assertEquals(true, compareCheck);
 
     }
 
@@ -158,7 +161,7 @@ public class QuantityMeasurementTest {
         Length inch1 = new Length(Length.Unit.INCH, 12.0);
         Length feet1 = new Length(Length.Unit.FEET, 1.0);
         boolean compareCheck = inch1.compare(feet1);
-        Assert.assertNotEquals(true, compareCheck);
+        Assert.assertEquals(true,compareCheck);
 
     }
 
@@ -208,8 +211,14 @@ public class QuantityMeasurementTest {
 
     }
 
+    @Test
+    public void given1YardAnd3Feet_shouldReturnEqualLength() {
+        Length yard1 = new Length(Length.Unit.YARD, 1.0);
+        Length feet1 = new Length(Length.Unit.FEET, 3.0);
+        boolean compareCheck = yard1.compare(feet1);
+        Assert.assertEquals(true, compareCheck);
 
-
+    }
 
 
 }
