@@ -19,5 +19,11 @@ public class Volume {
 
     }
 
+    public double addVolumes(Volume thatVolume) {
 
+        Double value1=this.volume.convert(this.value);
+        Double value2=thatVolume.volume.convert(thatVolume.value);
+        return value1+value2;
+
+    }
 }
