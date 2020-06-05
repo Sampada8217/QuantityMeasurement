@@ -46,6 +46,18 @@ public  class UnitConversion {
             public double convert(double milli) {
                 return milli/1000.0;
             }
+        },
+
+        KILOGRAM {
+           public double convert(double kiloGram) {
+              return kiloGram * 1000.0;
+           }
+        },
+        GRAM{
+            public double convert(double gram) {
+                return gram;
+            }
+
         };
 
         public double convert(double value) {

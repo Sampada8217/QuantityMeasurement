@@ -292,4 +292,13 @@ public class QuantityMeasurementTest {
         double add = litre1.addCompare(milli1);
         Assert.assertEquals(2, add, 0.0);
     }
+
+    @Test
+    public void given1KiloGramAnd100Grams_shouldReturnEqual() {
+        QuantityMeasurement kiloGram = new QuantityMeasurement(UnitConversion.Unit.KILOGRAM, 1.0);
+        QuantityMeasurement gram = new QuantityMeasurement(UnitConversion.Unit.GRAM, 1000.0);
+        boolean compareCheck = kiloGram.compare(gram);
+        Assert.assertTrue(compareCheck);
+    }
+
 }
