@@ -268,4 +268,12 @@ public class QuantityMeasurementTest {
         Assert.assertTrue(compareCheck);
     }
 
+    @Test
+    public void given1LitreAnd1000ml_shouldReturnEqualVolume() {
+        Volume litre1 = new Volume(VolumeConversion.Volume.LITRE, 1.0);
+        Volume milli1 = new Volume(VolumeConversion.Volume.MILLI, 1000.0);
+        boolean compareCheck=litre1.compareVolumes(milli1);
+        Assert.assertTrue(compareCheck);
+    }
+
 }

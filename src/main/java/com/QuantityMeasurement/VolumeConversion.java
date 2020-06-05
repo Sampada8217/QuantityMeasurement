@@ -14,6 +14,11 @@ public class VolumeConversion {
                 return litre;
             }
 
+        },
+        MILLI{
+            public double convert(double milli) {
+                return milli/1000.0;
+            }
         };
 
         public double convert(double value) {
