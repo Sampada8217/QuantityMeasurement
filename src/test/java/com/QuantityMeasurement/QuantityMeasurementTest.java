@@ -262,34 +262,34 @@ public class QuantityMeasurementTest {
 
     @Test
     public void given1GallonAnLitres_shouldReturnEqualVolume() {
-        Volume gallon1 = new Volume(VolumeConversion.Volume.GALLON, 1.0);
-        Volume litre1 = new Volume(VolumeConversion.Volume.LITRE, 3.785);
-        boolean compareCheck = gallon1.compareVolumes(litre1);
+        QuantityMeasurement gallon1 = new QuantityMeasurement(UnitConversion.Unit.GALLON, 1.0);
+        QuantityMeasurement litre1 = new QuantityMeasurement(UnitConversion.Unit.LITRE, 3.785);
+        boolean compareCheck = gallon1.compare(litre1);
         Assert.assertTrue(compareCheck);
     }
 
     @Test
     public void given1LitreAnd1000ml_shouldReturnEqualVolume() {
-        Volume litre1 = new Volume(VolumeConversion.Volume.LITRE, 1.0);
-        Volume milli1 = new Volume(VolumeConversion.Volume.MILLI, 1000.0);
-        boolean compareCheck = litre1.compareVolumes(milli1);
+        QuantityMeasurement litre1 = new QuantityMeasurement(UnitConversion.Unit.LITRE, 1.0);
+        QuantityMeasurement milli1 = new QuantityMeasurement(UnitConversion.Unit.MILLI, 1000.0);
+        boolean compareCheck = litre1.compare(milli1);
         Assert.assertTrue(compareCheck);
     }
 
 
     @Test
     public void given1GallonAnd3Litre_whenAddedBothValue_shouldReturnResult() {
-        Volume gallon1 = new Volume(VolumeConversion.Volume.GALLON, 1.0);
-        Volume litre1 = new Volume(VolumeConversion.Volume.LITRE, 3.785);
-        double add = gallon1.addVolumes(litre1);
+        QuantityMeasurement gallon1 = new QuantityMeasurement(UnitConversion.Unit.GALLON, 1.0);
+        QuantityMeasurement litre1 = new QuantityMeasurement(UnitConversion.Unit.LITRE, 3.785);
+        double add = gallon1.addCompare(litre1);
         Assert.assertEquals(7.57, add, 0.0);
     }
 
     @Test
     public void given1LitreAnd1000Milli_whenAddedBothValue_shouldReturnResult() {
-        Volume litre1 = new Volume(VolumeConversion.Volume.LITRE, 1.0);
-        Volume milli1 = new Volume(VolumeConversion.Volume.MILLI, 1000.0);
-        double add = litre1.addVolumes(milli1);
+        QuantityMeasurement litre1 = new QuantityMeasurement(UnitConversion.Unit.LITRE, 1.0);
+        QuantityMeasurement milli1 = new QuantityMeasurement(UnitConversion.Unit.MILLI, 1000.0);
+        double add = litre1.addCompare(milli1);
         Assert.assertEquals(2, add, 0.0);
     }
 }
