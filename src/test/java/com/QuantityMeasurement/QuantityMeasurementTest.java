@@ -260,6 +260,12 @@ public class QuantityMeasurementTest {
         Assert.assertEquals(3,add,0.0);
     }
 
-
+    @Test
+    public void given1GallonAnLitres_shouldReturnEqualVolume() {
+        Volume gallon1 = new Volume(VolumeConversion.Volume.GALLON, 1.0);
+        Volume litre1 = new Volume(VolumeConversion.Volume.LITRE, 3.785);
+        boolean compareCheck=gallon1.compareVolumes(litre1);
+        Assert.assertTrue(compareCheck);
+    }
 
 }
