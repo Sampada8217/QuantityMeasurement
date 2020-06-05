@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.QuantityMeasurement.QuantityMeasurementTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-06-05T15:40:23" hostname="DESKTOP-V36FRB4" time="0.006">
+<testsuite name="com.QuantityMeasurement.QuantityMeasurementTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-06-05T15:44:31" hostname="DESKTOP-V36FRB4" time="0.004">
   <properties/>
-  <testcase name="given1GallonAnd3Litre_whenAddedBothValue_shouldReturnResult" classname="com.QuantityMeasurement.QuantityMeasurementTest" time="0.006"/>
+  <testcase name="given1LitreAnd1000Milli_whenAddedBothValue_shouldReturnResult" classname="com.QuantityMeasurement.QuantityMeasurementTest" time="0.004"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
