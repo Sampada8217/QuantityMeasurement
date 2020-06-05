@@ -155,6 +155,8 @@ public class QuantityMeasurementTest {
        Assert.assertEquals(true, compareCheck);
     }
 
+
+
     @Test
     public void given12InchAnd1Feet_shouldReturnEqualLength() {
         QuantityMeasurement inch1 = new QuantityMeasurement(UnitConversion.Unit.INCH, 12.0);
@@ -217,5 +219,12 @@ public class QuantityMeasurementTest {
         boolean compareCheck = yard1.compare(feet1);
         Assert.assertEquals(true, compareCheck);
 
+    }
+    @Test
+    public void given2InchAnd5Cm_shouldReturnEqualLength() {
+        QuantityMeasurement inch1 = new QuantityMeasurement(UnitConversion.Unit.INCH, 2.0);
+        QuantityMeasurement centi1 = new QuantityMeasurement(UnitConversion.Unit.CENTIMETER, 5.0);
+        boolean compareCheck = inch1.compare(centi1);
+        Assert.assertEquals(true, compareCheck);
     }
 }

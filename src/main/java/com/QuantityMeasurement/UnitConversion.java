@@ -22,11 +22,18 @@ public  class UnitConversion {
                 return yard * 3;
 
             }
+        },
+
+        CENTIMETER{
+            public double convert(double centi){
+                return centi / 30.0;
+
+
+            }
         };
 
-
         public double convert(double value) {
-            return 0.0;
+            return value;
         }
     }
 }
