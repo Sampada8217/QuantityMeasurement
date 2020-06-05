@@ -316,6 +316,13 @@ public class QuantityMeasurementTest {
         Assert.assertEquals(1001,add,0.0);
     }
 
+    @Test
+    public void given212FahrenheitAnd100Celsius_shouldReturnEqualTemperature() {
+        QuantityMeasurement fahrenheit = new QuantityMeasurement(UnitConversion.Unit.FAHRENHEIT, 212.0);
+        QuantityMeasurement celsius = new QuantityMeasurement(UnitConversion.Unit.CELSIUS, 100.0);
+        boolean compareCheck=fahrenheit.compare(celsius);
+        Assert.assertTrue(compareCheck);
+    }
 
 
 
