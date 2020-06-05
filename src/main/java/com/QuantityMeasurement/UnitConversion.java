@@ -50,14 +50,19 @@ public  class UnitConversion {
 
         KILOGRAM {
            public double convert(double kiloGram) {
-              return kiloGram * 1000.0;
+              return kiloGram;
            }
         },
         GRAM{
             public double convert(double gram) {
-                return gram;
+                return gram / 1000;
             }
+        },
 
+        TONNE{
+            public double convert(double tonne) {
+                return tonne * 1000;
+            }
         };
 
         public double convert(double value) {

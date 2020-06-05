@@ -294,11 +294,29 @@ public class QuantityMeasurementTest {
     }
 
     @Test
-    public void given1KiloGramAnd100Grams_shouldReturnEqual() {
+    public void given1KiloGramAnd1000Grams_shouldReturnEqual() {
         QuantityMeasurement kiloGram = new QuantityMeasurement(UnitConversion.Unit.KILOGRAM, 1.0);
         QuantityMeasurement gram = new QuantityMeasurement(UnitConversion.Unit.GRAM, 1000.0);
         boolean compareCheck = kiloGram.compare(gram);
         Assert.assertTrue(compareCheck);
     }
+
+    @Test
+    public void given1TonneAnd1000KiloGrams_shouldReturnEqual() {
+        QuantityMeasurement tonne = new QuantityMeasurement(UnitConversion.Unit.TONNE, 1.0);
+        QuantityMeasurement kiloGram = new QuantityMeasurement(UnitConversion.Unit.KILOGRAM, 1000.0);
+        boolean compareCheck = kiloGram.compare(tonne);
+        Assert.assertTrue(compareCheck);
+    }
+    @Test
+    public void given1TonneAnd1000Gram_whenAddedBothValues_shouldReturnResult() {
+        QuantityMeasurement tonne = new QuantityMeasurement(UnitConversion.Unit.TONNE, 1.0);
+        QuantityMeasurement gram = new QuantityMeasurement(UnitConversion.Unit.GRAM, 1000.0);
+        double add=tonne.addCompare(gram);
+        Assert.assertEquals(1001,add,0.0);
+    }
+
+
+
 
 }
