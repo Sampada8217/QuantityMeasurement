@@ -237,9 +237,19 @@ public class QuantityMeasurementTest {
 
     @Test
     public void given1FeetAnd2Inch_whenAddedBothValue_shouldReturnResultLength() {
-        QuantityMeasurement inch1 = new QuantityMeasurement(UnitConversion.Unit.FEET, 1.0);
-        QuantityMeasurement inch2 = new QuantityMeasurement(UnitConversion.Unit.INCH, 2.0);
-        double add=inch1.addCompare(inch2);
+        QuantityMeasurement feet1 = new QuantityMeasurement(UnitConversion.Unit.FEET, 1.0);
+        QuantityMeasurement inch1 = new QuantityMeasurement(UnitConversion.Unit.INCH, 2.0);
+        double add=feet1.addCompare(inch1);
         Assert.assertEquals(14,add,0.0);
     }
+
+    @Test
+    public void given1FeetAnd1Feet_whenAddedBothValue_shouldReturnResultLength() {
+        QuantityMeasurement feet1 = new QuantityMeasurement(UnitConversion.Unit.FEET, 1.0);
+        QuantityMeasurement feet2 = new QuantityMeasurement(UnitConversion.Unit.FEET, 1.0);
+        double add=feet1.addCompare(feet2);
+        Assert.assertEquals(24,add,0.0);
+    }
+
+
 }
