@@ -23,6 +23,11 @@ public class QuantityMeasurement {
         return value1.equals(value2);
     }
 
+    public double addCompare(QuantityMeasurement that){
+        Double value1=this.unit.convert(this.value);
+        Double value2=that.unit.convert(that.value);
+        return value1+value2;
+    }
 
 
     @Override

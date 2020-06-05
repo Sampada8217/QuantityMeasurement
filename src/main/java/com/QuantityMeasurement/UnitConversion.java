@@ -8,25 +8,25 @@ public  class UnitConversion {
 
         FEET {
             public double convert(double feet) {
-                return feet ;
+                return feet * 12 ;
             }
         },
 
         INCH {
             public double convert(double inch) {
-                return inch / 12.0;
+                return inch ;
             }
         },
         YARD {
             public double convert(double yard) {
-                return yard * 3;
+                return yard * 36;
 
             }
         },
 
         CENTIMETER{
             public double convert(double centi){
-                return centi / 30.0;
+                return centi / 2.50;
 
 
             }

@@ -26,7 +26,6 @@ public class QuantityMeasurementTest {
 
             QuantityMeasurement feet1 = new QuantityMeasurement(UnitConversion.Unit.FEET, null);
             QuantityMeasurement feet2 = new QuantityMeasurement(UnitConversion.Unit.FEET, null);
-            Assert.assertEquals(feet1,feet2);
         } catch (QuantityException e) {
             Assert.assertEquals(QuantityException.ExceptionType.NULL_VALUE_EXCEPTION, e.type);
         }
@@ -226,5 +225,13 @@ public class QuantityMeasurementTest {
         QuantityMeasurement centi1 = new QuantityMeasurement(UnitConversion.Unit.CENTIMETER, 5.0);
         boolean compareCheck = inch1.compare(centi1);
         Assert.assertEquals(true, compareCheck);
+    }
+
+    @Test
+    public void given2InchAnd2Inch_whenAddedBothValue_shouldReturnLength() {
+        QuantityMeasurement inch1 = new QuantityMeasurement(UnitConversion.Unit.INCH, 2.0);
+        QuantityMeasurement inch2 = new QuantityMeasurement(UnitConversion.Unit.INCH, 2.0);
+        double add=inch1.addCompare(inch2);
+        Assert.assertEquals(4,add,0.0);
     }
 }
