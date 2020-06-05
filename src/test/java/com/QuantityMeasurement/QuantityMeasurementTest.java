@@ -252,4 +252,14 @@ public class QuantityMeasurementTest {
     }
 
 
+    @Test
+    public void given2InchAnd2Cm_whenAddedBothValue_shouldReturnResultLength() {
+        QuantityMeasurement inch1 = new QuantityMeasurement(UnitConversion.Unit.INCH, 2.0);
+        QuantityMeasurement centi1 = new QuantityMeasurement(UnitConversion.Unit.CENTIMETER, 2.5);
+        double add=inch1.addCompare(centi1);
+        Assert.assertEquals(3,add,0.0);
+    }
+
+
+
 }
