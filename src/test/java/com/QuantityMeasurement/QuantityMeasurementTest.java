@@ -10,7 +10,6 @@ public class QuantityMeasurementTest {
         QuantityMeasurement feet1 = new QuantityMeasurement(UnitConversion.Unit.FEET, 0.0);
         QuantityMeasurement feet2 = new QuantityMeasurement(UnitConversion.Unit.FEET, 0.0);
         Assert.assertEquals(feet1, feet2);
-
     }
 
     @Test
@@ -23,7 +22,6 @@ public class QuantityMeasurementTest {
     @Test
     public void givenNullFeetAndNullFeet_shouldThrowException() {
         try {
-
             QuantityMeasurement feet1 = new QuantityMeasurement(UnitConversion.Unit.FEET, null);
             QuantityMeasurement feet2 = new QuantityMeasurement(UnitConversion.Unit.FEET, 0.0);
         } catch (QuantityException e) {
@@ -45,7 +43,6 @@ public class QuantityMeasurementTest {
         Assert.assertEquals(feet1, feet2);
     }
 
-
     @Test
     public void given0InchAnd0Inch_shouldReturnEqual() {
         QuantityMeasurement inch1 = new QuantityMeasurement(UnitConversion.Unit.INCH, 0.0);
@@ -65,7 +62,6 @@ public class QuantityMeasurementTest {
     @Test
     public void givenNullInchAndNullInch_shouldThrowException() {
         try {
-
             QuantityMeasurement inch1 = new QuantityMeasurement(UnitConversion.Unit.INCH, null);
             QuantityMeasurement inch2 = new QuantityMeasurement(UnitConversion.Unit.INCH, 0.0);
         } catch (QuantityException e) {
@@ -160,7 +156,6 @@ public class QuantityMeasurementTest {
         QuantityMeasurement feet1 = new QuantityMeasurement(UnitConversion.Unit.FEET, 1.0);
         boolean compareCheck = inch1.compare(feet1);
         Assert.assertEquals(true, compareCheck);
-
     }
 
     @Test
@@ -169,7 +164,6 @@ public class QuantityMeasurementTest {
         QuantityMeasurement yard1 = new QuantityMeasurement(UnitConversion.Unit.YARD, 1.0);
         boolean compareCheck = feet1.compare(yard1);
         Assert.assertEquals(true, compareCheck);
-
     }
 
     @Test
@@ -178,9 +172,7 @@ public class QuantityMeasurementTest {
         QuantityMeasurement yard1 = new QuantityMeasurement(UnitConversion.Unit.YARD, 1.0);
         boolean compareCheck = feet1.compare(yard1);
         Assert.assertNotEquals(true, compareCheck);
-
     }
-
 
     @Test
     public void given1InchAnd1Yard_shouldReturnNotEqualLength() {
@@ -188,7 +180,6 @@ public class QuantityMeasurementTest {
         QuantityMeasurement yard1 = new QuantityMeasurement(UnitConversion.Unit.YARD, 1.0);
         boolean compareCheck = inch1.compare(yard1);
         Assert.assertNotEquals(true, compareCheck);
-
     }
 
     @Test
@@ -206,7 +197,6 @@ public class QuantityMeasurementTest {
         QuantityMeasurement yard1 = new QuantityMeasurement(UnitConversion.Unit.YARD, 1.0);
         boolean compareCheck = inch1.compare(yard1);
         Assert.assertEquals(true, compareCheck);
-
     }
 
     @Test
@@ -215,7 +205,6 @@ public class QuantityMeasurementTest {
         QuantityMeasurement feet1 = new QuantityMeasurement(UnitConversion.Unit.FEET, 3.0);
         boolean compareCheck = yard1.compare(feet1);
         Assert.assertEquals(true, compareCheck);
-
     }
 
     @Test
@@ -250,7 +239,6 @@ public class QuantityMeasurementTest {
         Assert.assertEquals(24, add, 0.0);
     }
 
-
     @Test
     public void given2InchAnd2Cm_whenAddedBothValue_shouldReturnResultLength() {
         QuantityMeasurement inch1 = new QuantityMeasurement(UnitConversion.Unit.INCH, 2.0);
@@ -274,7 +262,6 @@ public class QuantityMeasurementTest {
         boolean compareCheck = litre1.compare(milli1);
         Assert.assertTrue(compareCheck);
     }
-
 
     @Test
     public void given1GallonAnd3Litre_whenAddedBothValue_shouldReturnResult() {
@@ -301,12 +288,46 @@ public class QuantityMeasurementTest {
     }
 
     @Test
+    public void given1FeetAnd100KiloGrams_shouldThrowException() {
+        try {
+            QuantityMeasurement feet = new QuantityMeasurement(UnitConversion.Unit.FEET, 1.0);
+            QuantityMeasurement kilogram = new QuantityMeasurement(UnitConversion.Unit.KILOGRAM, 100.0);
+            boolean compare=feet.compare(kilogram);
+        } catch (QuantityException e) {
+            Assert.assertEquals(QuantityException.ExceptionType.WRONG_CONVERSION, e.type);
+        }
+    }
+
+    @Test
+    public void given1YardAndKiloGrams_shouldThrowException() {
+        try {
+            QuantityMeasurement yard = new QuantityMeasurement(UnitConversion.Unit.YARD, 1.0);
+            QuantityMeasurement kilogram = new QuantityMeasurement(UnitConversion.Unit.KILOGRAM, 1000.0);
+            boolean compare=yard.compare(kilogram);
+        } catch (QuantityException e) {
+            Assert.assertEquals(QuantityException.ExceptionType.WRONG_CONVERSION, e.type);
+        }
+    }
+
+    @Test
+    public void givenTempAndMilli_shouldThrowException() {
+        try {
+            QuantityMeasurement fahrenheit = new QuantityMeasurement(UnitConversion.Unit.FAHRENHEIT, 1.0);
+            QuantityMeasurement milli = new QuantityMeasurement(UnitConversion.Unit.MILLI, 1.0);
+            boolean compare=fahrenheit.compare(milli);
+        } catch (QuantityException e) {
+            Assert.assertEquals(QuantityException.ExceptionType.WRONG_CONVERSION, e.type);
+        }
+    }
+
+    @Test
     public void given1TonneAnd1000KiloGrams_shouldReturnEqual() {
         QuantityMeasurement tonne = new QuantityMeasurement(UnitConversion.Unit.TONNE, 1.0);
         QuantityMeasurement kiloGram = new QuantityMeasurement(UnitConversion.Unit.KILOGRAM, 1000.0);
         boolean compareCheck = kiloGram.compare(tonne);
         Assert.assertTrue(compareCheck);
     }
+
     @Test
     public void given1TonneAnd1000Gram_whenAddedBothValues_shouldReturnResult() {
         QuantityMeasurement tonne = new QuantityMeasurement(UnitConversion.Unit.TONNE, 1.0);
@@ -330,5 +351,4 @@ public class QuantityMeasurementTest {
         boolean compareCheck=fahrenheit.compare(celsius);
         Assert.assertTrue(compareCheck);
     }
-
 }
