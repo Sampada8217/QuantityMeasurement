@@ -68,7 +68,6 @@ public class QuantityMeasurementTest {
 
             QuantityMeasurement inch1 = new QuantityMeasurement(UnitConversion.Unit.INCH, null);
             QuantityMeasurement inch2 = new QuantityMeasurement(UnitConversion.Unit.INCH, null);
-            Assert.assertEquals(inch1, inch2);
         } catch (QuantityException e) {
             Assert.assertEquals(QuantityException.ExceptionType.NULL_VALUE_EXCEPTION, e.type);
         }
@@ -231,7 +230,7 @@ public class QuantityMeasurementTest {
     public void given2InchAnd2Inch_whenAddedBothValue_shouldReturnLength() {
         QuantityMeasurement inch1 = new QuantityMeasurement(UnitConversion.Unit.INCH, 2.0);
         QuantityMeasurement inch2 = new QuantityMeasurement(UnitConversion.Unit.INCH, 2.0);
-        double add = inch1.addCompare(inch2);
+        double add = inch1.addUnits(inch2);
         Assert.assertEquals(4, add, 0.0);
     }
 
@@ -239,7 +238,7 @@ public class QuantityMeasurementTest {
     public void given1FeetAnd2Inch_whenAddedBothValue_shouldReturnResultLength() {
         QuantityMeasurement feet1 = new QuantityMeasurement(UnitConversion.Unit.FEET, 1.0);
         QuantityMeasurement inch1 = new QuantityMeasurement(UnitConversion.Unit.INCH, 2.0);
-        double add = feet1.addCompare(inch1);
+        double add = feet1.addUnits(inch1);
         Assert.assertEquals(14, add, 0.0);
     }
 
@@ -247,7 +246,7 @@ public class QuantityMeasurementTest {
     public void given1FeetAnd1Feet_whenAddedBothValue_shouldReturnResultLength() {
         QuantityMeasurement feet1 = new QuantityMeasurement(UnitConversion.Unit.FEET, 1.0);
         QuantityMeasurement feet2 = new QuantityMeasurement(UnitConversion.Unit.FEET, 1.0);
-        double add = feet1.addCompare(feet2);
+        double add = feet1.addUnits(feet2);
         Assert.assertEquals(24, add, 0.0);
     }
 
@@ -256,7 +255,7 @@ public class QuantityMeasurementTest {
     public void given2InchAnd2Cm_whenAddedBothValue_shouldReturnResultLength() {
         QuantityMeasurement inch1 = new QuantityMeasurement(UnitConversion.Unit.INCH, 2.0);
         QuantityMeasurement centi1 = new QuantityMeasurement(UnitConversion.Unit.CENTIMETER, 2.5);
-        double add = inch1.addCompare(centi1);
+        double add = inch1.addUnits(centi1);
         Assert.assertEquals(3, add, 0.0);
     }
 
@@ -281,7 +280,7 @@ public class QuantityMeasurementTest {
     public void given1GallonAnd3Litre_whenAddedBothValue_shouldReturnResult() {
         QuantityMeasurement gallon1 = new QuantityMeasurement(UnitConversion.Unit.GALLON, 1.0);
         QuantityMeasurement litre1 = new QuantityMeasurement(UnitConversion.Unit.LITRE, 3.785);
-        double add = gallon1.addCompare(litre1);
+        double add = gallon1.addUnits(litre1);
         Assert.assertEquals(7.57, add, 0.0);
     }
 
@@ -289,7 +288,7 @@ public class QuantityMeasurementTest {
     public void given1LitreAnd1000Milli_whenAddedBothValue_shouldReturnResult() {
         QuantityMeasurement litre1 = new QuantityMeasurement(UnitConversion.Unit.LITRE, 1.0);
         QuantityMeasurement milli1 = new QuantityMeasurement(UnitConversion.Unit.MILLI, 1000.0);
-        double add = litre1.addCompare(milli1);
+        double add = litre1.addUnits(milli1);
         Assert.assertEquals(2, add, 0.0);
     }
 
@@ -312,7 +311,7 @@ public class QuantityMeasurementTest {
     public void given1TonneAnd1000Gram_whenAddedBothValues_shouldReturnResult() {
         QuantityMeasurement tonne = new QuantityMeasurement(UnitConversion.Unit.TONNE, 1.0);
         QuantityMeasurement gram = new QuantityMeasurement(UnitConversion.Unit.GRAM, 1000.0);
-        double add=tonne.addCompare(gram);
+        double add=tonne.addUnits(gram);
         Assert.assertEquals(1001,add,0.0);
     }
 
@@ -323,7 +322,5 @@ public class QuantityMeasurementTest {
         boolean compareCheck=fahrenheit.compare(celsius);
         Assert.assertTrue(compareCheck);
     }
-
-
 
 }
