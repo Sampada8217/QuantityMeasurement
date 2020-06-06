@@ -48,7 +48,6 @@ public class QuantityMeasurementTest {
         QuantityMeasurement inch1 = new QuantityMeasurement(UnitConversion.Unit.INCH, 0.0);
         QuantityMeasurement inch2 = new QuantityMeasurement(UnitConversion.Unit.INCH, 0.0);
         Assert.assertEquals(inch1, inch2);
-
     }
 
     @Test
@@ -56,7 +55,6 @@ public class QuantityMeasurementTest {
         QuantityMeasurement inch1 = new QuantityMeasurement(UnitConversion.Unit.INCH, 0.0);
         QuantityMeasurement inch2 = new QuantityMeasurement(UnitConversion.Unit.INCH, 1.0);
         Assert.assertNotEquals(inch1, inch2);
-
     }
 
     @Test
@@ -82,7 +80,6 @@ public class QuantityMeasurementTest {
         QuantityMeasurement inch2 = new QuantityMeasurement(UnitConversion.Unit.INCH, 5.0);
         Assert.assertEquals(inch1, inch2);
     }
-
 
     @Test
     public void given1FeetAnd1Inch_shouldReturnNotEquals() {
@@ -129,7 +126,6 @@ public class QuantityMeasurementTest {
         QuantityMeasurement inch1 = new QuantityMeasurement(UnitConversion.Unit.INCH, 1.0);
         boolean compareCheck = feet1.compare(inch1);
         Assert.assertNotEquals(true, compareCheck);
-
     }
 
     @Test
@@ -138,7 +134,6 @@ public class QuantityMeasurementTest {
         QuantityMeasurement feet1 = new QuantityMeasurement(UnitConversion.Unit.FEET, 1.0);
         boolean compareCheck = inch1.compare(feet1);
         Assert.assertNotEquals(true, compareCheck);
-
     }
 
     @Test
@@ -155,7 +150,7 @@ public class QuantityMeasurementTest {
         QuantityMeasurement inch1 = new QuantityMeasurement(UnitConversion.Unit.INCH, 12.0);
         QuantityMeasurement feet1 = new QuantityMeasurement(UnitConversion.Unit.FEET, 1.0);
         boolean compareCheck = inch1.compare(feet1);
-        Assert.assertEquals(true, compareCheck);
+        Assert.assertTrue(compareCheck);
     }
 
     @Test
@@ -163,7 +158,7 @@ public class QuantityMeasurementTest {
         QuantityMeasurement feet1 = new QuantityMeasurement(UnitConversion.Unit.FEET, 3.0);
         QuantityMeasurement yard1 = new QuantityMeasurement(UnitConversion.Unit.YARD, 1.0);
         boolean compareCheck = feet1.compare(yard1);
-        Assert.assertEquals(true, compareCheck);
+        Assert.assertTrue(compareCheck);
     }
 
     @Test
@@ -171,7 +166,7 @@ public class QuantityMeasurementTest {
         QuantityMeasurement feet1 = new QuantityMeasurement(UnitConversion.Unit.FEET, 1.0);
         QuantityMeasurement yard1 = new QuantityMeasurement(UnitConversion.Unit.YARD, 1.0);
         boolean compareCheck = feet1.compare(yard1);
-        Assert.assertNotEquals(true, compareCheck);
+        Assert.assertFalse(compareCheck);
     }
 
     @Test
@@ -179,7 +174,7 @@ public class QuantityMeasurementTest {
         QuantityMeasurement inch1 = new QuantityMeasurement(UnitConversion.Unit.INCH, 1.0);
         QuantityMeasurement yard1 = new QuantityMeasurement(UnitConversion.Unit.YARD, 1.0);
         boolean compareCheck = inch1.compare(yard1);
-        Assert.assertNotEquals(true, compareCheck);
+        Assert.assertFalse(compareCheck);
     }
 
     @Test
@@ -187,8 +182,7 @@ public class QuantityMeasurementTest {
         QuantityMeasurement yard1 = new QuantityMeasurement(UnitConversion.Unit.YARD, 1.0);
         QuantityMeasurement inch1 = new QuantityMeasurement(UnitConversion.Unit.INCH, 36.0);
         boolean compareCheck = yard1.compare(inch1);
-        Assert.assertEquals(true, compareCheck);
-
+        Assert.assertTrue(compareCheck);
     }
 
     @Test
@@ -196,7 +190,7 @@ public class QuantityMeasurementTest {
         QuantityMeasurement inch1 = new QuantityMeasurement(UnitConversion.Unit.INCH, 36.0);
         QuantityMeasurement yard1 = new QuantityMeasurement(UnitConversion.Unit.YARD, 1.0);
         boolean compareCheck = inch1.compare(yard1);
-        Assert.assertEquals(true, compareCheck);
+        Assert.assertTrue(compareCheck);
     }
 
     @Test
@@ -204,7 +198,7 @@ public class QuantityMeasurementTest {
         QuantityMeasurement yard1 = new QuantityMeasurement(UnitConversion.Unit.YARD, 1.0);
         QuantityMeasurement feet1 = new QuantityMeasurement(UnitConversion.Unit.FEET, 3.0);
         boolean compareCheck = yard1.compare(feet1);
-        Assert.assertEquals(true, compareCheck);
+        Assert.assertTrue(compareCheck);
     }
 
     @Test
@@ -212,7 +206,7 @@ public class QuantityMeasurementTest {
         QuantityMeasurement inch1 = new QuantityMeasurement(UnitConversion.Unit.INCH, 2.0);
         QuantityMeasurement centi1 = new QuantityMeasurement(UnitConversion.Unit.CENTIMETER, 5.0);
         boolean compareCheck = inch1.compare(centi1);
-        Assert.assertEquals(true, compareCheck);
+        Assert.assertTrue(compareCheck);
     }
 
     @Test
