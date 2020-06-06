@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.QuantityMeasurement.QuantityMeasurementTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-06-05T18:48:57" hostname="DESKTOP-V36FRB4" time="0.011">
+<testsuite name="com.QuantityMeasurement.QuantityMeasurementTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-06-06T06:36:54" hostname="DESKTOP-V36FRB4" time="0.025">
   <properties/>
-  <testcase name="given212FahrenheitAnd100Celsius_shouldReturnEqualTemperature" classname="com.QuantityMeasurement.QuantityMeasurementTest" time="0.011"/>
+  <testcase name="givenNullInchAndNullInch_shouldThrowException" classname="com.QuantityMeasurement.QuantityMeasurementTest" time="0.025"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

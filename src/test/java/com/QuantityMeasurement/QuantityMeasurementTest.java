@@ -25,7 +25,7 @@ public class QuantityMeasurementTest {
         try {
 
             QuantityMeasurement feet1 = new QuantityMeasurement(UnitConversion.Unit.FEET, null);
-            QuantityMeasurement feet2 = new QuantityMeasurement(UnitConversion.Unit.FEET, null);
+            QuantityMeasurement feet2 = new QuantityMeasurement(UnitConversion.Unit.FEET, 0.0);
         } catch (QuantityException e) {
             Assert.assertEquals(QuantityException.ExceptionType.NULL_VALUE_EXCEPTION, e.type);
         }
@@ -67,7 +67,7 @@ public class QuantityMeasurementTest {
         try {
 
             QuantityMeasurement inch1 = new QuantityMeasurement(UnitConversion.Unit.INCH, null);
-            QuantityMeasurement inch2 = new QuantityMeasurement(UnitConversion.Unit.INCH, null);
+            QuantityMeasurement inch2 = new QuantityMeasurement(UnitConversion.Unit.INCH, 0.0);
         } catch (QuantityException e) {
             Assert.assertEquals(QuantityException.ExceptionType.NULL_VALUE_EXCEPTION, e.type);
         }
@@ -319,6 +319,14 @@ public class QuantityMeasurementTest {
     public void given212FahrenheitAnd100Celsius_shouldReturnEqualTemperature() {
         QuantityMeasurement fahrenheit = new QuantityMeasurement(UnitConversion.Unit.FAHRENHEIT, 212.0);
         QuantityMeasurement celsius = new QuantityMeasurement(UnitConversion.Unit.CELSIUS, 100.0);
+        boolean compareCheck=fahrenheit.compare(celsius);
+        Assert.assertTrue(compareCheck);
+    }
+
+    @Test
+    public void givenFahrenheitAndCelsius_shouldReturnEqualTemperature() {
+        QuantityMeasurement fahrenheit = new QuantityMeasurement(UnitConversion.Unit.FAHRENHEIT, 500.0);
+        QuantityMeasurement celsius = new QuantityMeasurement(UnitConversion.Unit.CELSIUS, 260.0);
         boolean compareCheck=fahrenheit.compare(celsius);
         Assert.assertTrue(compareCheck);
     }
