@@ -98,10 +98,14 @@ public class QuantityMeasurementTest {
 
     @Test
     public void given0FeetAnd1Inch_shouldReturnNotEqualLength() {
-        QuantityMeasurement feet1 = new QuantityMeasurement(UnitConversion.Unit.FEET, 0.0);
-        QuantityMeasurement inch1 = new QuantityMeasurement(UnitConversion.Unit.INCH, 1.0);
-        boolean compareCheck = feet1.compare(inch1);
-        Assert.assertFalse(compareCheck);
+        try {
+            QuantityMeasurement feet1 = new QuantityMeasurement(UnitConversion.Unit.FEET, 0.0);
+            QuantityMeasurement inch1 = new QuantityMeasurement(UnitConversion.Unit.INCH, 1.0);
+            boolean compareCheck = feet1.compare(inch1);
+            Assert.assertFalse(compareCheck);
+        } catch (QuantityException e) {
+            Assert.assertEquals(QuantityException.ExceptionType.WRONG_CONVERSION,e.type);
+        }
     }
 
     @Test
@@ -122,18 +126,27 @@ public class QuantityMeasurementTest {
 
     @Test
     public void given1FeetAnd1Inch_shouldReturnNotEqualLength() {
-        QuantityMeasurement feet1 = new QuantityMeasurement(UnitConversion.Unit.FEET, 1.0);
-        QuantityMeasurement inch1 = new QuantityMeasurement(UnitConversion.Unit.INCH, 1.0);
-        boolean compareCheck = feet1.compare(inch1);
-        Assert.assertNotEquals(true, compareCheck);
+        try {
+            QuantityMeasurement feet1 = new QuantityMeasurement(UnitConversion.Unit.FEET, 1.0);
+            QuantityMeasurement inch1 = new QuantityMeasurement(UnitConversion.Unit.INCH, 1.0);
+            boolean compareCheck = feet1.compare(inch1);
+            Assert.assertNotEquals(true, compareCheck);
+        } catch (QuantityException e) {
+            Assert.assertEquals(QuantityException.ExceptionType.WRONG_CONVERSION, e.type);
+        }
     }
+
 
     @Test
     public void given1InchAnd1Feet_shouldReturnNotEqualLength() {
-        QuantityMeasurement inch1 = new QuantityMeasurement(UnitConversion.Unit.INCH, 1.0);
-        QuantityMeasurement feet1 = new QuantityMeasurement(UnitConversion.Unit.FEET, 1.0);
-        boolean compareCheck = inch1.compare(feet1);
-        Assert.assertNotEquals(true, compareCheck);
+        try {
+            QuantityMeasurement inch1 = new QuantityMeasurement(UnitConversion.Unit.INCH, 1.0);
+            QuantityMeasurement feet1 = new QuantityMeasurement(UnitConversion.Unit.FEET, 1.0);
+            boolean compareCheck = inch1.compare(feet1);
+            Assert.assertNotEquals(true, compareCheck);
+        } catch (QuantityException e) {
+            Assert.assertEquals(QuantityException.ExceptionType.WRONG_CONVERSION, e.type);
+        }
     }
 
     @Test
@@ -163,18 +176,26 @@ public class QuantityMeasurementTest {
 
     @Test
     public void given1FeetAnd1Yard_shouldReturnNotEqualLength() {
-        QuantityMeasurement feet1 = new QuantityMeasurement(UnitConversion.Unit.FEET, 1.0);
-        QuantityMeasurement yard1 = new QuantityMeasurement(UnitConversion.Unit.YARD, 1.0);
-        boolean compareCheck = feet1.compare(yard1);
-        Assert.assertFalse(compareCheck);
+        try {
+            QuantityMeasurement feet1 = new QuantityMeasurement(UnitConversion.Unit.FEET, 1.0);
+            QuantityMeasurement yard1 = new QuantityMeasurement(UnitConversion.Unit.YARD, 1.0);
+            boolean compareCheck = feet1.compare(yard1);
+            Assert.assertFalse(compareCheck);
+        } catch (QuantityException e) {
+            Assert.assertEquals(QuantityException.ExceptionType.WRONG_CONVERSION, e.type);
+        }
     }
 
     @Test
     public void given1InchAnd1Yard_shouldReturnNotEqualLength() {
-        QuantityMeasurement inch1 = new QuantityMeasurement(UnitConversion.Unit.INCH, 1.0);
-        QuantityMeasurement yard1 = new QuantityMeasurement(UnitConversion.Unit.YARD, 1.0);
-        boolean compareCheck = inch1.compare(yard1);
-        Assert.assertFalse(compareCheck);
+        try {
+            QuantityMeasurement inch1 = new QuantityMeasurement(UnitConversion.Unit.INCH, 1.0);
+            QuantityMeasurement yard1 = new QuantityMeasurement(UnitConversion.Unit.YARD, 1.0);
+            boolean compareCheck = inch1.compare(yard1);
+            Assert.assertFalse(compareCheck);
+        } catch (QuantityException e) {
+            Assert.assertEquals(QuantityException.ExceptionType.WRONG_CONVERSION, e.type);
+        }
     }
 
     @Test
@@ -286,7 +307,8 @@ public class QuantityMeasurementTest {
         try {
             QuantityMeasurement feet = new QuantityMeasurement(UnitConversion.Unit.FEET, 1.0);
             QuantityMeasurement kilogram = new QuantityMeasurement(UnitConversion.Unit.KILOGRAM, 100.0);
-            boolean compare=feet.compare(kilogram);
+            boolean compare = feet.compare(kilogram);
+            Assert.assertFalse(compare);
         } catch (QuantityException e) {
             Assert.assertEquals(QuantityException.ExceptionType.WRONG_CONVERSION, e.type);
         }
@@ -297,7 +319,8 @@ public class QuantityMeasurementTest {
         try {
             QuantityMeasurement yard = new QuantityMeasurement(UnitConversion.Unit.YARD, 1.0);
             QuantityMeasurement kilogram = new QuantityMeasurement(UnitConversion.Unit.KILOGRAM, 1000.0);
-            boolean compare=yard.compare(kilogram);
+            boolean compare = yard.compare(kilogram);
+            Assert.assertFalse(compare);
         } catch (QuantityException e) {
             Assert.assertEquals(QuantityException.ExceptionType.WRONG_CONVERSION, e.type);
         }

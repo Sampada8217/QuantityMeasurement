@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.QuantityMeasurement.QuantityMeasurementTest" tests="1" skipped="1" failures="0" errors="0" timestamp="2020-06-06T15:32:40" hostname="DESKTOP-V36FRB4" time="40.111">
+<testsuite name="com.QuantityMeasurement.QuantityMeasurementTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-06-08T07:47:28" hostname="DESKTOP-V36FRB4" time="0.016">
   <properties/>
-  <testcase name="given1YardAndKiloGrams_shouldThrowException" classname="com.QuantityMeasurement.QuantityMeasurementTest" time="40.111">
-    <skipped/>
-  </testcase>
+  <testcase name="given1TonneAnd1000KiloGrams_shouldReturnEqual" classname="com.QuantityMeasurement.QuantityMeasurementTest" time="0.016"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

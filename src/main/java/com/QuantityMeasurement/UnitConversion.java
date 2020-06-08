@@ -25,7 +25,6 @@ public  class UnitConversion {
         CENTIMETER {
             public double convert(double centi) {
                 return centi / 2.50;
-
             }
         },
 

@@ -1,5 +1,4 @@
 package com.QuantityMeasurement;
-
 public class QuantityMeasurement {
 
     private final UnitConversion.Unit unit;
@@ -15,9 +14,12 @@ public class QuantityMeasurement {
     }
 
     public boolean compare(QuantityMeasurement thatQuantityMeasurement) {
-            Double value1 = this.unit.convert(this.value);
-            Double value2 = thatQuantityMeasurement.unit.convert(thatQuantityMeasurement.value);
-            return value1.equals(value2);
+       if(this.unit.convert(this.value)!=thatQuantityMeasurement.unit.convert(thatQuantityMeasurement.value)){
+           throw new QuantityException(QuantityException.ExceptionType.WRONG_CONVERSION,"Wrong Comparison");
+       }
+        Double value1 = this.unit.convert(this.value);
+        Double value2 = thatQuantityMeasurement.unit.convert(thatQuantityMeasurement.value);
+        return value1.equals(value2);
     }
 
     public double addUnits(QuantityMeasurement that){
